@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력양식폼관련태그</title>
+</head>
+
+<body>
+    <h1>폼 관련 태그</h1>
+    <p>
+        form태그 내의 submit버튼 클릭 시 해당 form 내에 작성된
+        사용자가 입력한 값들이 서버 전달된다.
+        <br>
+        [표현법] <br>
+        form action = "속성값" method = "속성값" <br>
+
+        * action 속성 : form태그 내부의 입력한 값들을 전달할
+        "서버의 경로" <br>
+        * method 속성 : 서버로 전달시 전송방식을 지정하는 속성<br>
+        -> <mark>get / post</mark> 두가지 방식이 존재함. <br>
+        1. get : 요청시 사용자가 전달한 값들이 URL에 노출되는 방식 <br>
+        2. post : 요청시 사용자가 전달한 값들이 URL에 노출되지 않는 방식, 암호화 <br>
+    </p>
+
+    <fieldset>
+        <form action="searchSomething">
+            검색내용 : <input type="text" name="keyword" />
+            <input type="submit" value="검색" />
+        </form>
+    </fieldset>
+
+    <form action="test" method="post">
+        <fieldset>
+            <legend>제목1</legend>
+            입력1 : <input type="text" name="text1" id="text3" /> <br>
+            입력2 : <input type="text" name="text2" id="text4" /> <br>
+            <!-- 입력한 속성을 보낼때 name은 필수적임 -->
+        </fieldset>
+        <input type="submit" value="제출">
+    </form>
+
+    <hr>
+
+    <h2>text와 관련된 input 태그의 타입</h2>
+
+    <form action="">
+        <h3>type = "text"</h3>
+        <p>
+            한 줄 짜리 텍스트를 입력할 수 있는 텍스트 박스(기본값)
+        </p>
+        <label>아이디 : </label>
+        <input name="user-id" placeholder="아이디를 입력하세요." maxlength="12" required> <!-- required 아무것도 입력안한 상태에선 제출X -->
+        <br><br>
+        <h3>type="password"</h3>
+        <p>
+            비밀번호를 입력할 수 잇는 텍스트 상자
+        </p>
+        <label for="user-pwd">비밀번호 : </label>
+        <input type="password" name="user-pwd" placeholder="비밀번호를 입력하세요." maxlength="12" required />
+
+        <br><br>
+        <h3>type = "search/url/email"</h3>
+        <p>
+            겉부분은 일반 텍스트 박스와 유사하지만, 각 정보에
+            맞게 세분화된 기능을 제공하는 타입들
+        </p>
+
+        검색 : <input type="search" name="keyword"> <br>
+        url : <input type="url" name="homepage"> <br>
+        email : <input type="email" name="email"> <br>
+
+        <input type="submit" value="회원가입" />
+    </form>
+
+    <br><br>
+    <h2>textarea 태그</h2>
+    <p>
+        - 여러 줄의 텍스트를 입력할 수 있는 박스
+    </p>
+    <form>
+        <fieldset>
+            <legend>글작성</legend>
+            글제목 : <input type="text" name="title" size="30"> <br>
+            글내용 : <textarea name="content" cols="30" rows="10" style="resize: none;"></textarea>
+
+            <br><br>
+            <input type="submit" value="작성">
+        </fieldset>
+    </form>
+
+    <br><br>
+    <hr>
+    <br>
+
+    <h2>숫자와 관련된 input타입들</h2>
+
+    <form>
+        <h3>type="number"</h3>
+        <p>
+            - 숫자값만 입력 가능한 input태그
+            - 스핀박스가 존재
+        </p>
+        수량 : <input type="number" name="amount" min="0" max="50" step="5" value="0">
+
+        <br><br>
+        <h3>type="range"</h3>
+        <p>
+            - 슬라이드바를 통해 숫자를 지정
+        </p>
+        점수 : <input type="range" name="score" min="0" max="100" step="20" value="0">
+        <br><br>
+    </form>
+    <br>
+    <hr>
+    <h2>날짜 및 시간과 관련된 input태그의 타입</h2>
+
+    <form>
+        <h3>type = "date/month/week/time/datetime-local"</h3>
+        date : <input type="date" name="date"> <br>
+        month : <input type="month" name="month"> <br>
+        week : <input type="week" name="week"> <br>
+        time : <input type="time" name="time"> <br>
+        datetime-local : <input type="datetime-local" name="datetime-local">
+
+        <input type="submit" value="제출">
+    </form>
+
+    <br>
+    <hr>
+    <h2>라디오버튼과 체크박스</h2>
+    <form>
+        <h3>라디오 버튼</h3>
+        <p>
+            - 제시한 여러개의 값들 중 오직 1개만 선택해야 하는 경우 사용 <br>
+            - 서버로 요청시 선택된(checked) 체크박스의 value 값이 전송된다.
+            - name속성값이 동일한 radio버튼끼리 하나의 그룹이 만들어진다.
+        </p>
+        성별 : <br>
+        <input type="radio" name="gender" id="X" value="x" checked> 선택안함 <br>
+        <input type="radio" name="gender" id="male" value="male"> 남자 <br>
+        <input type="radio" name="gender" id="female" value="female"> 여자 <br>
+        <!-- 같은 name을 공유하는 속성들은 여러 개 중 하나만 선택됨 -->
+
+        <br><br>
+
+        <h3>체크박스</h3>
+        <p>
+            - 제시한 여러개의 값들 중에서 여러개를 선택 해야하는 경우 사용 <br>
+            - 현재 선택된 체크박스의 value값들이 서버로 전송.
+            - name속성값을 통일시켜 하나의 그룹으로 만들어줘야 함.
+        </p>
+
+        토핑 : <br>
+        <input type="checkbox" name="topping" value="sausage"> 소세지 <br>
+        <input type="checkbox" name="topping" value="vegetable"> 야채 <br>
+        <input type="checkbox" name="topping" value="lamb"> 양고기 <br>
+
+        <br><br>소세지 <br>
+        <input type="submit" value="제출">
+    </form>
+
+    <hr>
+    <h2>select태그와 option태그</h2>
+
+    <p>
+        - 사용자에게 직접 키보드로 값을 입력받는 게 아니라 내가 제시한 여러 옵션들 중 하나를
+        선택할 수 있게 하는 태그 <br>
+        - 서버로 요청시 현재 선택된(selected) 값이 서버로 넘어간다. <br>
+        - 각 option태그에 value속성값을 명시한 경우 value값이 서버로 넘어가고, 명시하지 않은 경우
+        content영역의 값이 서버로 전송. <br>
+    </p>
+    <form>
+        국적 : <select name="national">
+            <option value="ko">한국</option>
+            <option>중국</option>
+            <option>일본</option>
+            <option selected>미국</option>
+            <option>북한</option>
+        </select>
+        <input type="submit" value="제출">
+    </form>
+
+    <br><br><br><br><br><br>
+
+    <hr>
+    <br>
+    <form action="siginup1" method="post">
+        <fieldset>
+            <legend>회원가입 동의서</legend>
+            <legend>이용약관 동의(필수)</legend>
+            <textarea cols = "45" rows="10" style="resize: none;">여러분을 환영합니다. 네이버 서비스 및 제품(이하 '서비스')을 이용해 주셔서 감사합니다. 본 약관은 다양한 네이버 서비스의 이용과 관련하여 네이버 서비스를 제공하는 네이버 주식회사(이하 '네이버')와 이를 이용하는 네이버 서비스 회원(이하 '회원') 또는 비회원과의 관계를 설명하며, 아울러 여러분의 네이버 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.</textarea>
+            <br>
+            <input type="radio" name="Agree1" id="O" value="O"> 동의합니다.
+            <input type="radio" name="Agree1" id="X" value="X" checked> 동의하지 않습니다. <br>
+            
+            <br>
+            <legend>개인정보 수집 및 이용 동의(필수)</legend>
+            <textarea cols = "45" rows="10">개인정보 보호법에 따라~~</textarea>
+            <br>
+            <input type="radio" name="Agree2" id="O" value="O"> 동의합니다.
+            <input type="radio" name="Agree2" id="X" value="X" checked> 동의하지 않습니다. <br>
+            <br>
+            <input type="radio" name="AgreeAll" id="O" value="O"> 모두 동의합니다.
+            <br><br>
+            <input type="submit" value="취소">
+            <input type="submit" value="확인">
+        </fieldset>
+    </form>
+    <br><br><br>
+
+    <form action="siginup2" method="post">
+        <fieldset>
+            <legend>회원가입 양식</legend>
+            <label>* 아이디</label> <br>
+            <input name="user-id" placeholder="영문 소문자, 숫자, 특수기호 5~20" minlength="5" maxlength="20" required>
+            <input type="submit" value="아이디 중복 확인">
+            
+            <br><br>
+            <label for="user-pwd">* 비밀번호</label> <br>
+            <input name="password_homework" 
+            placeholder="영문 소문자, 숫자, 특수문자 8~15" minlength="8" maxlength="20" required>
+            
+            <br><br>
+            <label for="user-pwd">* 비밀번호 재확인</label> <br>
+            <input name="re_password_homework" 
+            placeholder="영문 소문자, 숫자, 특수문자 8~15" minlength="8" maxlength="20" required>
+            
+            <br><br>
+            <label>* 이름</label> <br>
+            <input type="text" name="name_homework">
+
+            <br><br>
+            <label>* 주민등록번호</label> <br>
+            <input type="text" name="personalnum_birth", maxlength="7", size="7"> -
+            <input type="text" name="personalnum", maxlength="8", size="8">
+
+            <br><br>
+            <label>* 성별</label> <br>
+            <input type="radio" name="gender" id="X" value="x" checked> 선택안함 
+            <input type="radio" name="gender" id="male" value="male"> 남자 
+            <input type="radio" name="gender" id="female" value="female"> 여자
+        
+            <br><br>
+            <label>* 생년월일</label> <br>
+            <input type="date" name="birth">
+
+            <br><br>
+            <label>주소</label> <br>
+            <input type="text" name="address">
+
+            <br><br>
+            <label>우편번호</label> <br>
+            <input type="text" name="postnum" size="8">
+            <input type="submit" value="우편번호찾기">
+            <input type="checkbox" name="addressagree">우편 수신 동의
+
+            <br><br>
+            <label>이메일</label> <br>
+            <input type="email" name="email">
+            <input type="checkbox" name="emailagree">이메일 수신 동의
+
+            <br><br>
+            <label>휴대폰번호</label> <br>
+            <select name="phone_front">
+            <option>010</option>
+            <option>031</option>
+            <option>011</option>
+            </select>
+            - <input type="text" name="phone_1", maxlength="4", size="4">
+            - <input type="text" name="phone_2", maxlength="4", size="4">
+            <input type="checkbox" name="emailagree">문자 수신 동의
+
+            <br>
+            <br>
+            <input type="submit" value="초기화">
+            <input type="submit" value="가입하기">
+        </fieldset>
+    </form>
+    <br><br>
+    <hr>
+    <br><br>
+    <h2>추가적인 input태그 타입들</h2>
+
+    <!--
+        form태그 내부에 전송할 값이 file인 경우 사용하는 속성 
+    -->
+    <form enctype="multipart/form-data">
+        <h3>type="file"</h3>
+        <p>
+            - 첨부할 파일을 선택할 수 있는 input태그<br>
+            파일선택 : <input type="file" name="upload">
+        </p>
+
+        <br><br>
+        <h3>type="hidden</h3>
+        <p>
+            - 특정값을 사용자에게 입력받지 않고 화면에 노출시키지도 않고 넘기고자 하는 경우 사용하는 input태그
+            안보임 : <input type="hidden" name="hidden" value="바보"/>
+        </p>
+        
+        <br><br>
+        <h3>type="submit/button/reset"</h3>
+        <input type="submit">
+        <input type="button" value="버튼">
+        <input type="reset">
+        <br><br>
+        <h3>button type="submit/button/reset</h3>
+        <button type="submit"><img src="../resources/image/iconsample.png">제출</button>
+        <button type="button">버튼</button>
+        <button type="reset">초기화</button>
+
+        <button>기본타입버튼</button>
+
+        <br><br><br><br>
+        <input type="submit" value="제출">
+    </form>
+</body>
+
+</html>

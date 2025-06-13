@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자관련태그</title>
+</head>
+<body>
+    아룡하세영 <br/>
+    안녕하세요 <br/> <br/>
+    아룡히가세용 <br/>
+
+    <h1>h1태그(문서의 제목)</h1>
+    <h2>h2태그</h2>
+    <h3>h3태그</h3>
+    <h4>h4태그</h4>
+    <h5>h5태그</h5>
+    <h6>h6태그</h6>
+    <!--
+        h태그들은 heading 태그로, 문서의 제목 나타냄
+         - 자동 개행 처리
+         - 위아래 여백이 있음
+         - h1이 가장 큰 제목, h6이 가장 작은 제목
+         - 글꼴 bold체로 표시됨
+    -->
+    <h7>h7태그</h7> ㅋㅋ눌러봐
+    <br/>
+
+    <h3>문단을 나누는 태그들</h3>
+    <p>
+        p태그는 문단영역을 나누는 태그로 p태그와 pre태그들 다 문단을
+        나누는데 사용된다.
+    </p>
+    <p>
+        단, p태그 내부에서 줄바꿈을 하고싶은 경우 별도의 br태그를 추가해야 함
+    </p>
+    <p>
+        만약 여러개의 공백을 추가하고 싶다면 html내부의 entity를 사용해야 함
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(공백을 의미하는 기호문구)
+        &lt; &gt;
+    </p>
+    <pre>
+        pre태그는 p태그와 달리 여러                    공백을 인식할 수 있다.
+        줄 바꿈 같은 경우 별도의 br태그를 사용하지 않아도 개행처리가 됨
+
+    </pre>
+    <hr/>
+    <h3>그 밖의 글자 관련 문장태그들</h3>
+
+    <strong>strong태그</strong>는 글자를 굵게 표시합니다.<br/>
+    
+    <b>b : 글자를 굵게(bold)표시하는 태그</b>
+    <br><br> <!-- html의 스타일을 꾸미는 용도의 태그로 특별한 의미X-->
+
+    <em>em : 글자를 기울여서 표시하는 태그</em>
+    <br><br> <!--강조의 의미를 가진 글꼴에 추가-->
+
+    <i>i : 글자를 기울여서 표시하는 태그</i>
+
+    <mark>mark : 형광펜, 글자를 강조하는 태그</mark>
+    <br><br>
+
+    <u>u : 글자에 밑줄이 그어지는 태그</u>
+    <br><br>
+
+    <ins>ins : 글자에 밑줄이 그어지는 태그</ins>
+    <br><br>
+    <!--
+        ins 태그는 html5에서 새로 추가된 태그로,
+        문서에 새로 추가된 내용을 나타내는 태그입니다.
+    -->
+
+    <strike>글자에 취소선을 그어주는 태그</strike>
+    <br><br>
+
+    <del>del : 글자에 취소선이 그어지는 태그</del>
+    <br><br>
+    <!--
+        strike 태그는 html4에서 사용되던 태그로,
+        새롭게 추가된 html5에서는 del 태그로 대체되었습니다.
+    -->
+    이건 큰 글자임<small>small : 글자를 작게 표시하는 태그</small>
+    <br><br>
+
+    이건 보통 글자임<big>big : 글자를 크게 표시하는 태그</big>
+    <br><br>
+
+    <abbr title="Internet of Things"> <!--마우스 올려놓으면 설명글 뜸-->
+        IOT
+    </abbr>란 각종 사물에 센서와 통신기능을 탑재해 인터넷에 연결하는 기술을 의미한다.
+    <br><br>
+
+    <sub>sub : 기본글자에 아래첨자를</sub>나타내는 태그
+    <br><br>
+
+    <sup>sup : 기본글자에 위첨자를</sup>나타내는 태그
+    <br><br>
+
+    code : 코드블럭을 나타내는 태그
+    <code>
+        System.out.println("Hello, World!");
+    </code>
+    <br><br>
+
+    <br><br><br><br><br><br><br>
+    <hr>
+    <p>
+    <h3>글자관련 태그 응용1</h3>
+    태그들은 해당 태그내에서 중첩으로 사용가능하다. <b>굵은</b>글자를 사용할 수도 있고, 
+    <i>기울</i>이거나,<strike>취소선</strike>을 넣는 등 다양하게 사용할 수 있다.<br>
+    <mark>형광펜</mark>을 넣어 글자를 강조할 수 있다. <mark><i><b>정말 중요</b></i></mark>한 내용의 경우 태그들을 여러개 중첩하기도한다.
+    </p>
+</body>
+</html>
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div,
+        span {
+            border: 1px solid black;
+        }
+
+        #div1,
+        #span1 {
+            background-color: red;
+        }
+
+        #div2,
+        #span2 {
+            background-color: blue;
+        }
+
+        #div3,
+        #span3 {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>영역 관련 태그</h1>
+
+    <!--
+        블럭 요소 : 한 줄 단위로 영역을 차지하는 요소들
+        줄 바꿈이 이미 적용되어 다음 요소 출력시 해당 요소의 다음 줄에 출력
+        ex) h, p, pre, ... , "div"
+
+        인라인 요소 : content내용에 해당되는 부분만 영역을 차지하는 요소들.
+        줄바꿈이 적용되지 않아 옆으로 연이어져서 출력됨.
+        ex) b, s, mark, input, ...,"span"
+    -->
+
+    <h2>div태그와 span태그 차이점</h2>
+
+    <h3>div(division)태그 : 블럭요소 (한 줄 단위 영역차지)</h3>
+    <div id="div1">첫번째 영역</div>
+    <div id="div2">두번째 영역</div>
+    <div id="div3">세번째 영역</div>
+
+    <h3>span 태그 : 인라인 요소(content 영역만을 차지)</h3>
+    <span id="span1">1번째 영역</span>
+    <span id="span2">2번째 영역</span>
+    <span id="span3">3번째 영역</span>
+
+    <h3>div 태그 : 컨텐츠 영역의 값을 커다란 사각형 박스로 영역 지정</h3>
+
+    <h3>span 태그 : 컨텐츠 영역의 값을 문장단위로 영역을 지정</h3>
+    <div>
+        당나귀였다 나무꾼 지금 소 술집에 발에 애들한테는 나갔지 실족을 바쁘게 이래 탐탁하게 살 릇아닌가 그것 당기지 장수도 아무렴 뜨거워졌다 부딪힐 인연 고의를 짐승도 둥실둥실 해 같은 생원은 조 었다
+        비슬비슬 미끄러졌다 다리까지 지 쳐들고 대로는 물 각다귀에는 적 달리 않았다 옷을 우스워 생각했더니 염려하실 법 보이는 달아나는 가제 다 쫓아 달래듯이 것 부끄러워서 계집 허 새끼군 자식 맞기 부러웠다
+        나귀들의 왼손잡이가 뒤요 떠나세 암놈을 그제나 되지 충줏집을 못한 재산을 젊은 벌름거리고 좁은 것을 내 목 입을 무엇이구 말일세 진종일 찼다 경망하게도 하였다 시작한 달의 밤길을 없고 금방 이 수가 수
+        생각보다도 치고 땀을 때가 나귀가 식지.
+    </div>
+
+    <hr>
+
+    <h1>iFrame 태그</h1>
+    <p>
+        - 현재 문서 내에 다른 웹페이지문서를 추가하는 태그
+    </p>
+
+    <iframe src="04_이미지와멀티미디어.html" width="600"></iframe>
+
+    <iframe width="1905" height="750" src="https://www.youtube.com/embed/1_9O-o3q3sI"
+        title="&#39;리빙 레전드&#39; 호날두 또 역사 썼다! 포르투갈, 6년 만에 &#39;UNL 우승&#39; #SPOTIME" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</body>
+
+</html>

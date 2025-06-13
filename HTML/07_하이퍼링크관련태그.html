@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>하이퍼링크 관련 태그</title>
+</head>
+
+<body>
+    <!--
+        하이퍼링크 기능은 웹 문서에서 또 다른 문서를 클릭만으로 이동될 수 있게끔 연결시켜 놓은 기능.
+        하이퍼링크 기능은 텍스트, 이미지 등 다양한 요소에 적용시킬 수 있다.
+    -->
+
+    <h1>하이퍼링크 태그</h1>
+    <h3>a 태그를 이용한 하이퍼링크</h3>
+
+    <a href="01_글자관련태그.html">글자관련태그</a>
+    <a href="/HTML/02_목록관련태그.html">목록 관련 태그</a>
+
+    <h3>외부 웹사이트와 링크연결</h3>
+    <ul>
+        <li><a href="https://naver.com">네이버로 이동</a></li>
+        <li><a href="https://google.com" target="_blank">구글로 이동</a></li>
+    </ul>
+
+    <h3>이미지 클릭해서 웹페이지 링크 연결</h3>
+    <a href="https://naver.com" target="_blank">
+        <img src="/resources/image/bono.jpg" width="200" />
+    </a>
+
+    <h3 id="menu">한 페이지내에서 이동하는 앵커태그</h3>
+    <ul>
+        <li><a href="#contents1">본문내용1</a></li>
+        <li><a href="#contents2">본문내용2</a></li>
+        <li><a href="#contents3">본문내용3</a></li>
+    </ul>
+
+    <h4 id="contents1">본문내용1</h4>
+    <div>
+        없이 웃는다 싫다지 충줏집 서슬엔지 새끼군 보았으나 어디 늘 피우고 달이 주막에서 상판을 작정이었누 생각 정 견딜 수 발에 여 긴 헐레벌떡 것 웬걸요 건너야 는 시작한 귀에 안 고요한 충줏집에서는 빤히
+        뜰에 배길 해서 앞을 그 가슴이 넘지 사라진 세월이 채로 셀 온 계집이 어지간히 쫓아 보자 토방이란 속 기르긴 뒤 못했으니까 참혹한 족할 웃었다 선달이 짧게 그지없이 그대로 보내련만 웬 뒤를 술이 철
+        꿩궈 알 어머니는 드팀전의 틀렸고 밤기운 철없이 내일 여주고 첫날 목소리로 화가 보고 닿지 헤매기는 절렁절렁 않았다 걸음도 이십 빠진 계집 있다 생원은 지내 나귀에겐 허.
+    </div>
+
+    <h4 id="contents2">본문내용2</h4>
+    <div>
+        황금 거친 그들의 얼음에 그와 낙원을 만천하의 주며 공자는 없으면 원대하고 위하여 두기 현저하여 인도하겠다는 없는 있을 때에 가치를 심장은 운다 점염이 그러므로 것이다 피부가 싹이 실로 그들은 이것이다
+        천하를 불러 봄바람이다 그림자는 않는 무엇을 것이 나고 속잎 못할 같이 사랑의 가슴에 구하지 그들에게 붙잡아 위하여서 대중을 그들을 얼마나 청춘의 인간에 것은 사막이다 뭇 순진한지라 인간의 청춘이 이상
+        사라지지 끝까지 이것은 반짝이는 힘있다 날카로우나 피다 천자만홍이 얼음과 풀이 기관같이 얼음 원질이 별과 대고 아니하였고 찾아 생생하며 힘차게 산야에 작고 보내는 보라 더운지라 이상은.
+    </div>
+
+    <h4 id="contents3">본문내용3</h4>
+    <div>
+        황금 거친 그들의 얼음에 그와 낙원을 만천하의 주며 공자는 없으면 원대하고 위하여 두기 현저하여 인도하겠다는 없는 있을 때에 가치를 심장은 운다 점염이 그러므로 것이다 피부가 싹이 실로 그들은 이것이다
+        천하를 불러 봄바람이다 그림자는 않는 무엇을 것이 나고 속잎 못할 같이 사랑의 가슴에 구하지 그들에게 붙잡아 위하여서 대중을 그들을 얼마나 청춘의 인간에 것은 사막이다 뭇 순진한지라 인간의 청춘이 이상
+        사라지지 끝까지 이것은 반짝이는 힘있다 날카로우나 피다 천자만홍이 얼음과 풀이 기관같이 얼음 원질이 별과 대고 아니하였고 찾아 생생하며 힘차게 산야에 작고 보내는 보라 더운지라 이상은.
+    </div>
+
+    <a href="#menu">위로</a>
+
+
+    <br><br>
+    <hr>
+    <h1>KH 게시판 - 실습 문제</h1>
+    <hr>
+    <h3>메뉴</h3>
+    <div>학습내용 클릭시 작성한 html페이지로 이동되도록 구현한다.</div>
+    <ol type="A">
+        <li>
+            Home
+        </li>
+        <li>
+            <b>KH게시판</b>
+        </li>
+        <li>
+            학습내용
+            <ol type="I" start="7" reversed>
+                <li><a href="/HTML/07_하이퍼링크관련태그.html">하이퍼링크 관련태그</a></li>
+                <li><a href="/HTML/06_영역관련태그.html">영역 관련태그</a></li>
+                <li><a href="/HTML/05_입력양식폼관련태그.html">입력양식 및 폼 관련태그</a></li>
+                <li><a href="/HTML/04_이미지와멀티미디어.html">이미지 밑 멀티미디어 관련태그</a></li>
+                <li><a href="/HTML/03_표관련태그.HTML">표 관련태그</a></li>
+                <li><a href="/HTML/02_목록관련태그.html">목록 관련태그</a></li>
+                <li><a href="/HTML/01_글자관련태그.html">글자 관련태그</a></li>
+            </ol>
+        </li>
+    </ol>
+    <hr>
+
+    <h2>KH 게시판</h2>
+    <div>4번 게시글 제목 클릭시 4번 게시글 내용으로 이동 되도록 구현한다.
+        <br>
+        등록하기 버튼 클릭시 게시글 등록으로 이동하도록 구현한다.
+
+        <table border="1">
+            <tr>
+                <th width = "50">번호</th>
+                <th width = "300">제목</th>
+                <th width = "200">작성자</th>
+                <th width = "50">조회수</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>오늘부터 다이어트 1일치 들어갑니다.</td>
+                <td>mkm</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>html 재밌죠?</td>
+                <td>mkm</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>새해목표 : sqld & 정처기 따기</td>
+                <td>조용우</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td><b>4</b></td>
+                <td>
+                    <a href="#4번 게시글">
+                        <b>... html재미없다.</b>
+                    </a>
+                </td>
+                <td><b>임세윤</b></td>
+                <td><b>100</b></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>놀란치킨 또 먹고싶네</td>
+                <td>mkm</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <th colspan="4">
+                    <a href="#new"><button>등록</button></a>
+                </th>
+            </tr>
+        </table>
+    </div>
+
+    <br><br>
+    <hr>
+    <br>
+
+    <h3 id="4번 게시글">4번 게시글 내용</h3>
+    <div>
+        행병합, 열병합을 적절히 활용하여 아래 테이블데이터를 만든다.
+        <table border="1">
+            <tr>
+                <th width="100">번호</th>
+                <td colspan="3">4</td>
+            </tr>
+            <tr>
+                <th>제목</th>
+                <td colspan="3">...html 재미없다</td>
+            </tr>
+            <tr>
+                <th>작성자</th>
+                <td>임세윤</td>
+                <td>조회수</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <th rowspan="2">내용</th>
+                <td rowspan="2" colspan="2">html 공부를 시작했는데 생각보다 어렵고 <strike>재미가 없습니다...</strike>
+                    재밌게 공부하는 꿀팁 좀 알려주십쇼
+                </td>
+                <th colspan="2">첨부 이미지(200 x 200)</th>
+            </tr>
+            <tr>
+                <th><img src="/resources/image/bono.jpg" alt="" width="200" height="200"></th>
+            </tr>
+        </table>
+    </div>
+
+    <br><br>
+    <hr>
+    <br>
+    <h3 id="new">게시글 등록</h3>
+    <div>
+        제목, 내용은 등록시 반드시 값을 받도록 하고, 값을 전송할 서버의 주소는 insert, 전송방식은 port로 설정한다.
+        <br>
+        제목과 내용, 첨부파일은 서버로 전송시 title, content, upload라는 이름으로 전송한다.
+    </div>
+    <form action="insert" method="post">
+        <fieldset>
+            <legend>게시글 등록</legend>
+            <fieldset>
+                <legend>제목</legend>
+                <input type="text" name="title">
+            </fieldset>
+            <fieldset>
+                <legend>내용</legend>
+                <textarea name="content" cols="30" rows="5" style="resize: none;"></textarea>
+            </fieldset>
+            <fieldset>
+                <legend>첨부파일</legend>
+                <input type="file" name="upload">
+            </fieldset>
+            <br>
+            <input type="submit" value="등록하기">
+        </fieldset>
+    </form>
+    <hr>
+    2024KH
+
+    <hr>
+</body>
+
+</html>

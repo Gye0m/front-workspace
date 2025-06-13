@@ -1,0 +1,74 @@
+/* 기본 설정 */
+body {
+  margin: 0;
+}
+
+.wrapper {  
+  min-height: 100vh;
+  border: 2px solid #333;
+  background-color: #1a1a1a;
+}
+
+.header,
+.footer {
+  background-color: #222;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid #444;
+}
+
+.content {
+  display: flex;
+  border: 2px solid #444;
+  background-color: #d5dde6;
+}
+
+.sidebar {
+  flex: 1 1 40%;
+  width: 200px;
+  display: flex;
+  padding: 20px;
+  border-right: 2px solid #ccc;
+  flex-direction: column;
+}
+
+.sidebar .menu{
+  width: 100%;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar .menu span{
+  width: 100%;
+  height: 40px;
+  margin: 10px;
+
+  border: 1px solid #beb9b9;
+  display: flex;
+  background-color: rgba(189, 186, 186, 0.637);
+  align-items: center;
+}
+
+/* 메인 게시글 영역 */
+.main {
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  
+  justify-content: space-between;
+  background-color: #fdfdfd;
+  border-left: 2px solid gray;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1 1 30%;
+  min-width: 200px;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border: 2px solid #bbb;
+  text-align: center;
+}
