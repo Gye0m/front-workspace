@@ -90,95 +90,6 @@
         <li></li>
         <li></li>
         <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
     </ul>
     <script>
         function test4() {
@@ -197,6 +108,190 @@
 
         }
     </script>
+
+    <h1>Date</h1>
+    <input type="button" value="실행" onclick="test5();">
+
+    <script>
+        function test5() {
+            var now = new Date();
+            console.log(now);
+
+            var time1 = new Date(2025, 5, 16);
+            console.log(time1);
+
+            consonle.log(displayDateTime(now));
+        };
+
+        var displayDateTime = function (dt) {
+            const year = dt.getFullYear();
+            const month = dt.getMonth() + 1;
+            const date = dt.getDate();
+
+            return year + "-" + (month < 10 ? "0" + month : month) + "-" + date;
+            // 2025-06-16;
+
+        }
+    </script>
+
+    <h2>형변환</h2>
+    <input type="button" value="실행" onclick="test6();">
+    <script>
+        const test6 = function () {
+            console.log(3 + 7 + "7"); // 107
+            console.log(7 - "7"); // 0 => 7 - "7" => 7 - 7 = 0
+            console.log(7 * "7"); // 49
+            console.log(7 / "7"); // 1
+            console.log(7 % "4"); // 1
+            // 자동형변환
+            console.log(7 % "a"); // NaN : Not a Number
+            // 파싱 불가능한 문자를 숫자로 형변환시 반환되는 값
+            console.log(typeof NaN); // 0 1 2 : number, NaN : number
+
+            console.log(7 + true); // 8
+            console.log(7 + false); // 7
+
+            console.log([] + 1); // 1
+            /*
+                [] + 1 => [].toString() + 1
+                 => '' + 1 => '1'
+            */
+            console.log([].toString()); // 객체가 생성되었으니 null값은 아님
+            // 2. 빈배열 , 3. '' => ''빈 문자열이 형변환되어 0으로 바뀜
+
+            console.log({} + 1);
+            // {}.toString() -> 문자열 + 1 ->
+            // 문자열 + "1" => 문자열1
+
+            function fn() { };
+
+            console.log(fn + 1);
+        }
+    </script>
+
+    <h2>Number | parseInt | parseDouble</h2>
+    <input type="button" value="실행" onclick="test7();">
+    <script>
+        const test7 = function () {
+            let num = "1234.567원";
+            console.log(Number(num)); // 자동형변환시
+            // 사용되는 메서드. 변환불가능한 문자열인 경우 NaN리턴
+            // !! NaN인지 확인하는 경우엔 동등비교 "=="사용 불가 !!
+
+            // 변환 가능한 범위까지 변환
+            console.log(parseInt(num));
+            console.log(parseFloat(num));
+        }
+    </script>
+
+    <h2>NaN | Infinity</h2>
+    <input type="button" value="실행" onclick="test8();">
+    <script>
+        const test8 = function () {
+            console.log(10 / 0);
+            // 값을 0으로 나누는 경우 Infinitiy 반환
+            console.log(typeof ((10 / 0))); // number
+
+            console.log((10 / 0) == Infinity); // true
+            console.log((10 / "a") == NaN); // false
+            console.log(isNaN((10 / "A"))); // true
+            // isNaN() : 산술연산결과가 NaN인지 아닌지 확인
+        };
+    </script>
+
+    <h2>논리형 형변환</h2>
+    <input type="button" value="실행" onclick="test9();">
+    <script>
+        const test9 = function () {
+            /* 
+                자바스크립트는 변수, 리터럴을 boolean형으로 형변환이 가능
+                
+                값이 존재하지 않는 것은 false로 치환
+                 - 0, -0, 0.0, "", '', undefined, null, NaN
+                값이 존재하는 것은 true로 치환
+                 - 123, 123.123, "하이", new Date(), [], {}
+
+                if(값) , 삼항연산자
+                Boolean(값)
+            */
+            console.log(Boolean(123)); // true => 값이 존재하는지를 판단
+            console.log(Boolean(-123)); // true
+            console.log(Boolean(123)); // true
+            console.log(Boolean("ABCDE")); // true => 빈 문자열이 아니기에 true반환
+            console.log(Boolean(new Date())); // true => 힙메모리의 주소값 반환 true
+            console.log(Boolean([])); // true new Array()
+            console.log(Boolean({})); // true new Object()
+
+            console.log(Boolean(0)); // false => 0
+            console.log(Boolean("")); // false => 속이 빈 문자열은 빈값으로 처리
+            console.log(Boolean(undefined)); // false => 변수 정의하고 값 처리하지 않는 경우 : undefined
+            console.log(Boolean(null)); // false => 할당된 값이 없음
+            console.log(Boolean(NaN)); // false 
+
+            var obj = "false";
+            if (obj) {
+                console.log("obj에 값이 있다.");
+            } else {
+                console.log("obj에 값이 없다.");
+            }
+
+            console.log("0" == 0); // true
+            // "0" == 0 -> Number("0") == 0;
+            console.log([] == 0); // true
+            // [] == 0 -> [].toString() -> '' == 0
+            // Number('') == 0 -> 0 == 0
+            console.log([] == "0"); // false
+            // '' == "0" -> false
+        };
+    </script>
+
+    <h2>엄격비교연산자</h2>
+    <input type="button" value="실행" onclick="test10();">
+    <script>
+        /* 
+            일반동등비교연산자
+             == 자료형이 다른 경우, "자동 형변환" 후 동등비교 수행
+             != 자료형이 다른 경우, "자동 형변환" 후 동등비교 수행
+
+            엄격동등비교연산자
+             === "값, 타입"을 모두 검사하는 연산자, 값은 같으나 타입이 다른 경우
+                 즉시 false반환.
+             !== 
+        */
+        const test10 = function () {
+            console.log(3 == "3"); // true
+            console.log(3 != "3"); // false
+
+            console.log(3 === "3"); // false
+            console.log(3 === 3); // true
+            console.log(3 !== "3"); // true
+
+            console.log(null == undefined); // true
+            console.log(null === undefined); // false 
+        };
+    </script>
+
+    <h2>짧은 조건문</h2>
+    <input type="button" value="실행" onclick="test11();">
+    <script>
+        const test11 = function () {
+            let num = 10;
+
+            // if (num % 2 === 0) {
+            //     console.log("짝수");
+            // } else {
+            //     console.log('홀수');
+            // }
+
+            // 짧은 조건문
+            // 조건식A && 조건식B(실행할 코드 기술 가능)
+            num % 2 == 0 && console.log("짝수다."); // 마지막으로 있는 값을 반환
+            num % 2 != 0 && console.log("홀수다.");
+
+            // 조건식A || 조건식B
+        };
+    </script>
+    <br><br><br><br><br><br><br><br>
 </body>
 
 </html>
