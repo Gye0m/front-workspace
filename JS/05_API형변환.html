@@ -12,11 +12,14 @@
     <h1>String</h1>
     <input type="button" value="실행" onclick="test1();">
     <input type="button" value="@실습문제" onclick="test2();">
-
-    <script>
+    <div class="wrapper"></div>
+    <script> 
         //String 내장 객체
         function test1() {
+            // var wrapper = document.querySelector(".wrapper");
+            
             var str = "Samsung Apple Xiaomi";
+            // wrapper.innerHTML = str;
             console.log(str.length); // length 속성
             console.log(str.toUpperCase());
             console.log(str.indexOf("ms"));
@@ -103,6 +106,8 @@
                 lis[i].innerHTML = rd;
                 if (rd % 2 == 0) {
                     lis[i].style.color = "pink";
+                } else{
+                    lis[i].style.color = "black";
                 }
             }
 
@@ -111,10 +116,13 @@
 
     <h1>Date</h1>
     <input type="button" value="실행" onclick="test5();">
-
+    <div class = "dat"></div>
     <script>
         function test5() {
+            var wrapper = document.querySelector("dat");
+            
             var now = new Date();
+            wrapper.innerHTML = now;
             console.log(now);
 
             var time1 = new Date(2025, 5, 16);

@@ -22,13 +22,16 @@
             // 값을 입력한 경우 입력한 값이 name으로 전달
             // 입력을 하지 않고 취소를 하는경우 null값이 반환
             console.log(name);
+            alert(name);
         }
     </script>
     <h2>innerHTML | innerText | outerHTML</h2>
     <input type="button" value="innerHTML" onclick="test3();">
     <input type="button" value="innerText" onclick="test4();">
     <input type="button" value="outerHTML" onclick="test5();">
-    <div class="wrapper"></div>
+    <div class="wrapper">
+
+    </div>
     <script>
         var wrapper = document.querySelector(".wrapper");
         function test3(){
@@ -43,6 +46,7 @@
             }else{
                 wrapper.innerHTML = str;
             }
+            wrapper.innerHTML = str;
             console.log(wrapper.innerHTML);
         }
         function test4(){
@@ -52,7 +56,7 @@
                  - setter : html태그는 html요소가 아닌 단순 문자로써 처리된다.
             */
            var str = "<h1>배고파</h1>";
-           //wrapper.innerText = str;
+        //    wrapper.innerText = str;
            wrapper.textContent = str;
         }
         function test5(){
