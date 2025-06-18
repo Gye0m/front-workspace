@@ -145,23 +145,143 @@
         }
 
 
-        function test7() {
-            let num = 10;
-            const display = document.querySelector("#countdown");
-            display.style.display = 'block';
-            display.innerHTML = num;
+        // function test7() {
+        //     let num = 10;
+        //     const display = document.querySelector("#countdown");
+        //     display.style.display = 'block';
+        //     display.innerHTML = num;
 
-            let timerId = setInterval(function () {
-                num--;
-                if (num > 0) {
-                    display.innerHTML = num;
-                } else {
-                    display.innerHTML = "뻥";
-                    clearInterval(timerId);
+        //     let timerId = setInterval(function () {
+        //         num--;
+        //         if (num > 0) {
+        //             display.innerHTML = num;
+        //         } else {
+        //             display.innerHTML = "뻥";
+        //             clearInterval(timerId);
+        //         }
+        //     }, 1000);
+        // }
+
+        function test7() {
+            const intervalId = setInterval(f, 100);
+            let count = 10;
+            function f() {
+                const countdown = document.querySelector("#countdown");
+                countdown.innerHTML = count--;
+                countdown.style.display = "block";
+
+                if (count < 0) {
+                    clearInterval(intervalId);
+                    countdown.innerHTML = "뻥";
                 }
-            }, 1000);
+
+            }
+        }
+
+    </script>
+
+    <h2>BOM</h2>
+    <h3>Browser Object Model</h3>
+    <input type="button" value="navigator" onclick="test8();">
+    <input type="button" value="location" onclick="test9();">
+    <input type="button" value="history" onclick="test10();">
+    <input type="button" value="screen" onclick="test11();">
+
+    <script>
+        // console.log("페이지 로딩시 실행");
+        function test8() {
+            /* 
+                navigator : 현재 실행중인 browser에 대한 정보를 가진 객체
+                 - 클라이언트의 브라우저 정보를 확인하여 적합한 콘텐츠 제공.
+            */
+            console.log(navigator);
+        }
+
+        function test9() {
+            /* 
+                location :
+                 - 브라우저의 주소창과 관련된 정보를 가진 객체
+                 - 브라우저의 URL에서 프로토콜, 호스트네임, 포트번호
+                   자원경로등을 얻어 올 수 있다.
+                 - 브라우저의 URL을 조작하여 다른 값으로 변경할 수도 있다. 
+            */
+            console.log(location);
+            // location.reload(); // 현재 페이지 새로고침 메서드
+
+            // location.href = "https://naver.com"; // location 버튼 누르면 이동
+            // 페이지 이동 메서드
+            location.assign("https://naver.com"); // 뒤로 가기 가능
+            // location.replace("https://naver.com"); // 뒤로 가기 불가
+        }
+
+        function test10() {
+            /* 
+                history
+                 - 방문기록과 관련된 정보를 가진 객체
+                back() : 뒤로 가기
+                forward() : 앞으로 가기
+                go(n) : n번째 페이지로 이동하기 기능
+            */
+            console.log(history);
+            console.log(history.back());
+        }
+
+        function test11() {
+            /* 
+                screen
+                 - 모니터 관련 정보를 가진 객체
+            */
+            console.log(screen);
         }
     </script>
+
+    <h2>DOM</h2>
+    <input type="button" value="createElement" onclick="test12();">
+    <input type="button" value="createImg" onclick="test13();">
+    <input type="button" value="deleteNode" onclick="deleteNode(this);">
+    <input type="button" value="실습문제" onclick="test14();">
+
+    <div class="img-wrapper"></div>
+    <div class="result"></div>
+
+    <script>
+        /* 
+            Node객체 : 
+             - 모든 DOM객체는 Node객체를 상속 받는다.
+             - html내부에 작성하는 주석, 문자열, 태그 모두 node가 된다.
+             - 모든 html요소는 node의 메서드를 사용할 수 있고,
+               EventTarget의 이벤트 속성들을 이용할 수 있다.
+             - dom객체의 속성 및 메서드들 
+              1) firstChild, lastChild, childNodes
+              2) contains(), appendChild(), removeChild()...
+        */
+        function test12() {
+            // <h3>안녕하세요</h3>
+
+            // 동적으로 html요소 생성하기
+            // 1. innerHTML사용
+            // document.querySelector(".result").innerHTML = "<h3>하이ㅋ</h3>";
+
+            // 2. document 객체 생성 메서드 동적으로 활용하기
+            // 1) elementNode생성 메서드
+            const h3 = document.createElement("h3"); // <h3></h3>
+
+            // 2) textNode생성
+            const textNode = document.createTextNode("안녕하세요");
+
+            // 3) 두 Node를 연결
+            //   계층구조 설정
+            h3.appendChild(textNode); // <h3>안녕하세요</h3>
+
+            document.querySelector(".result").appendChild(h3);
+        }
+    </script>
+
+    <script src="./js/09_window.js"> // JS파일 연결
+
+    </script>
+
+
     <BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR>
 </body>
 

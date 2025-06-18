@@ -16,9 +16,14 @@
 	<button onclick="addFunc();">실행</button>
 	<script>
 		function mkAddFunc (){
-
+			let num = 0;
+			return function(){
+				const myadder = document.querySelector("#myadder");
+				num += Number(myadder.value); // input값으로 받은 모든값은 문자열로 처리
+				// num += myadder.value * 1;
+				console.log(num);
+			}
 		} 
-
 		var addFunc = mkAddFunc();
 	</script>
 </body>

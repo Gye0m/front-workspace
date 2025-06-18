@@ -25,6 +25,7 @@
 
         /* 
             1회용 함수를 작성할 때 사용하는 방법
+            => 즉시 실행
             IIFE(Immediatley Invoked Function Expression)
             (function(){}())
         */
@@ -196,9 +197,9 @@
         const myFn = funcY();
         // myFn();
 
-        function makeClosureCounter(){
+        function makeClosureCounter() {
             let cnt = 0;
-            return function(){
+            return function () {
                 console.log("closureScope : " + ++cnt);
             }
         }
