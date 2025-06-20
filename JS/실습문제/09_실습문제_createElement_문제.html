@@ -92,7 +92,7 @@
             li.appendChild(h5);
             li.appendChild(p);
 
-            list = document.querySelector("#boardList>li");
+            list = document.querySelector("#boardList");
             list.appendChild(li);
         }
 
@@ -102,34 +102,36 @@
         */
         function searchTitle() {
             // 내가 입력한 내용 받아오자
-            const input = document.querySelector('[name="search"]').value;
+            const input = document.querySelector('[name="search"]').value.trim();
 
-            if (input.trim().length == 0) { // 검색한 게 없음
-                console.log("재검색으로 돌아가자잇");
-                for (let li of list) {
-                    li.style.display = "block";
-                }
-                return;
-            }
+            const list = document.querySelectorAll("#boardList>li");
+            // if (input.length == 0) { // 검색한 게 없음
+            //     console.log("재검색으로 돌아가자잇");
+            //     for (let li of list) {
+            //         li.style.display = "block";
+            //     }
+            //     return;
+            // }
 
-            list = document.querySelectorAll("#boardList>li");
             // console.log(list[0]);
-
+            console.log(list);
             for (let li of list) {
                 // console.log(li);
                 const title = li.querySelector('h5').textContent;
-                const content = li.querySelector('p').textContent;
-
+                // const content = li.querySelector('p').textContent;
+                // console.log(title);
+                // console.log(input);
                 // console.log(title + content);
-                if (!(title.includes(input))) {
+                if (!title.includes(input)) {
                     // 만약 포함되어 있지 않다면
-                    li.querySelector('h5').style.display = "none";
-                    li.querySelector('p').style.display = "none";
-                    console.log(title);
-                    // li.style.display = "none";
+                    // li.querySelector('h5').style.display = "none";
+                    // li.querySelector('p').style.display = "none";
+                    console.log(input);
+                    console.log("안보여지는거" + title);
+                    li.style.display = "none";
                 } else {
                     li.style.display = "block";
-                    console.log("안보여지는거" + title);
+                    console.log("보여지는거" + title);
                 }
             }
         }
