@@ -1,20 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>jQuery_03_method_실습</title>
-	<!--최신 jquery cdn 사용하기-->
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script>    
+    <!--최신 jquery cdn 사용하기-->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
+
 <body>
     <h2>Method1</h2>
     <script>
-        function add(){
+        function add() {
+            const title = $(":text[name=title]");
+            const content = $(":text[name=content]");
+            const owner = $(":text[name=owner]");
+
+            const tr = $("<tr></tr>");
+            const first = $("<td></td>").html(title.val());
+            const second = $("<td></td>").html(content.val());
+            const third = $("<td></td>").html(owner.val());
+
+            tr.append(first, second, third).appendTo("table");
+
+            title.val("");
+            content.val("");
+            owner.val("");
         }
-        </script>
-    
+    </script>
+
     제목 : <input type="text" name="title" /> <br />
     내용 : <input type="text" name="content" /><br />
     작성자 : <input type="text" name="owner" /><br /> <br>
@@ -30,19 +46,24 @@
     <h2>Method2</h2>
     <script>
         var idx = 0;
-        function addFile(){
-            
+        function addFile() {
+            const file = $(":file").first().clone();
+            file.attr("name", "f" + ++idx);
+            $("div").not(".clone"). // 클론 요소가 아닌 부모 요소 선택
+            append($("<div class='clone'></div>").append(file));
         }
-        function delFile(){
+        function delFile() {
             //input:file의 최소개수는 1개로 제한.
+            $(":file").length > 1 && $(".clone").last().remove() && --idx;
         }
-        </script>
-    
+    </script>
+
     <div>
-        <input type="file" name="f0"/>  &nbsp;&nbsp;
+        <input type="file" name="f0" /> &nbsp;&nbsp;
         <input type="button" value="추가" onclick="addFile()" />&nbsp;
         <input type="button" value="삭제" onclick="delFile()" />
     </div>
 
 </body>
+
 </html>
